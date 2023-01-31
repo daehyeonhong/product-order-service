@@ -21,6 +21,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("com.google.guava:guava:31.1-jre")
     testImplementation("io.rest-assured:rest-assured:5.3.0")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("com.h2database:h2")
