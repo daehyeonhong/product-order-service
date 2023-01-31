@@ -46,13 +46,13 @@ public class DatabaseCleanup implements InitializingBean {
     @Transactional
     public void execute() {
         this.entityManager.flush();
-        this.entityManager.createNamedQuery("SET REFERENTIAL_INTEGRITY " +"FALSE").executeUpdate();
+        this.entityManager.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
 
         for (final String tableName : this.tableNames) {
-            this.entityManager.createNamedQuery("TRUNCATE TABLE " + tableName).executeUpdate();
-            this.entityManager.createNamedQuery("ALTER TABLE " + tableName + " ALTER COLUMN ID RESTART WITH 1").executeUpdate();
+            this.entityManager.createNativeQuery("TRUNCATE TABLE " + tableName).executeUpdate();
+            this.entityManager.createNativeQuery("ALTER TABLE " + tableName + " ALTER COLUMN ID RESTART WITH 1").executeUpdate();
         }
 
-        this.entityManager.createNamedQuery("SET REFERENTIAL_INTEGRITY " + "TRUE").executeUpdate();
+        this.entityManager.createNativeQuery("SET REFERENTIAL_INTEGRITY TRUE").executeUpdate();
     }
 }
