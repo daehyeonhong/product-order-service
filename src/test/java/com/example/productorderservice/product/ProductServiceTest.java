@@ -16,11 +16,11 @@ class ProductServiceTest {
         this.productService.addProduct(ProductSteps.상품등록요청_생성());
 
         final Long productId = 1L;
-        final String afterName = "상품수정";
+        final String afterName =  "상품수정";
         final int afterPrice = 2_000;
         final int beforePrice = 1_000;
         final String beforeName = "상품평";
-        final UpdateProductRequest request = new UpdateProductRequest(afterName, afterPrice, DiscountPolicy.NONE);
+        final UpdateProductRequest request = ProductSteps.상품수정요청_생성(afterName, afterPrice);
 
         this.productService.updateProduct(productId, request);
 
@@ -31,5 +31,4 @@ class ProductServiceTest {
         Assertions.assertNotEquals(productResponse.name(), beforeName);
         Assertions.assertNotEquals(productResponse.price(), beforePrice);
     }
-
 }

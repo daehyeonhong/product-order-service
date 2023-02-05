@@ -30,4 +30,8 @@ public class ProductSteps {
                 .then().log().all()
                 .extract();
     }
+
+    public static UpdateProductRequest 상품수정요청_생성(final String afterName, final int afterPrice) {
+        return new UpdateProductRequest(afterName, afterPrice, DiscountPolicy.NONE);
+    }
 }
