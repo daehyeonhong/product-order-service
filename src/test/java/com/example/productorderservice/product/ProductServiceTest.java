@@ -16,7 +16,7 @@ class ProductServiceTest {
         this.productService.addProduct(ProductSteps.상품등록요청_생성());
 
         final Long productId = 1L;
-        final String afterName =  "상품수정";
+        final String afterName = "상품수정";
         final int afterPrice = 2_000;
         final int beforePrice = 1_000;
         final String beforeName = "상품평";
