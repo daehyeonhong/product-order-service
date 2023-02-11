@@ -16,4 +16,21 @@ class ProductTest {
         Assertions.assertEquals(product.getDiscountPolicy(), DiscountPolicy.NONE);
     }
 
+    @Test
+    void noneDiscountedProduct() {
+        final Product product = new Product("상품명", 1_000, DiscountPolicy.NONE);
+        Assertions.assertEquals(product.getDiscountPrice(), 1_000);
+    }
+
+    @Test
+    void fix1000DiscountedProduct() {
+        final Product product = new Product("상품명", 1_000, DiscountPolicy.FIX_1000_AMOUNT);
+        Assertions.assertEquals(product.getDiscountPrice(), 0);
+    }
+
+    @Test
+    void overFix1000DiscountedProduct() {
+        final Product product = new Product("상품명", 800, DiscountPolicy.FIX_1000_AMOUNT);
+        Assertions.assertEquals(product.getDiscountPrice(), 0);
+    }
 }

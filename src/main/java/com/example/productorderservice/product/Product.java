@@ -1,5 +1,6 @@
 package com.example.productorderservice.product;
 
+import com.example.productorderservice.order.Order;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -38,5 +39,9 @@ public class Product {
         this.name = name;
         this.price = price;
         this.discountPolicy = discountPolicy;
+    }
+
+    public int getDiscountPrice() {
+        return this.discountPolicy.applyDiscount(this.price);
     }
 }
