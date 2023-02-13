@@ -1,6 +1,8 @@
-package com.example.productorderservice.product;
+package com.example.productorderservice.product.application.port;
 
-interface ProductPort {
+import com.example.productorderservice.product.domain.Product;
+
+public interface ProductPort {
     void save(final Product product);
 
     Product getProduct(Long productId);

@@ -1,6 +1,5 @@
-package com.example.productorderservice.product;
+package com.example.productorderservice.product.domain;
 
-import com.example.productorderservice.order.Order;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

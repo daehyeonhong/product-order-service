@@ -1,8 +1,9 @@
-package com.example.productorderservice.payment;
+package com.example.productorderservice.payment.application.port;
 
-import com.example.productorderservice.order.Order;
+import com.example.productorderservice.order.domain.Order;
+import com.example.productorderservice.payment.domain.Payment;
 
-interface PaymentPort {
+public interface PaymentPort {
     Order getOrder(Long orderId);
 
     void pay(int totalPrice, String cardNumber);
